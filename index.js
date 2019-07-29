@@ -1,4 +1,5 @@
 const express = require('express');
+const models = require('./app/models')
 const { User, Company, Skill, UserSkill } = require('./app/models');
 const bodyParser = require('body-parser');
 
@@ -111,6 +112,7 @@ app.delete('/users/:id', (req, res) => {
 });
 
 const port = process.env.PORT || 3000;
-console.log(port);
-app.listen(port);
-console.log("Servidor escutando na porta 3000");
+models.sequelize.sync().then(() => {
+    app.listen(port);
+    console.log("Servidor escutando na porta " + port);
+})

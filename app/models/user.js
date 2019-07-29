@@ -10,7 +10,6 @@ module.exports = (sequelize, DataTypes) => {
         },
         email: DataTypes.STRING,
         password: DataTypes.STRING,
-        companyId: DataTypes.INTEGER
     }, {});
     User.associate = (models) => {
         User.belongsTo(models.Company, {foreignKey: 'companyId', as: 'company'})
