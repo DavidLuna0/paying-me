@@ -3,8 +3,7 @@ module.exports = {
   password: '720b09ee',
   database: 'heroku_954686f24b6f53b',
   host: 'us-cdbr-iron-east-02.cleardb.net',
-  dialect: 'mysql',
-  port: 
+  dialect: 'mysql'
 }
 
 /* module.exports = {
